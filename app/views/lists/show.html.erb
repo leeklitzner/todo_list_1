@@ -1,0 +1,7 @@
+<h1><%= @list.what %></h1>
+<h3><%= @list.when %></h3>
+<h3><%= @list.where %></h3>
+<hr />
+<%= link_to 'Revise List', revise_list_path(@list) %>
+<%= link_to 'Destroy List', @list, method: :delete %>
+<%= link_to 'Back', lists_path %>

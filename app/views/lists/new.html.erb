@@ -1,0 +1,19 @@
+<h1>
+  <%= @list.id ? 'Revise List' : 'Add List' %>
+</h1>
+<%= form_for @list do |f| %>
+  <fieldset>
+    <legend>List Info</legend>
+    <%= f.label :what %>
+    <%= f.text_field :what %>
+    <br />
+    <br />
+    <%= f.label :when %>
+    <%= f.text_field :when %>
+    <br />
+    <br />
+    <%= f.label :where %>
+    <%= f.text_field :where %>
+    <br />
+    <%= f.submit %>
+<% end %>
