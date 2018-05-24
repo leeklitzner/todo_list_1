@@ -13,10 +13,11 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+    render :form
   end
 
   def create
-    @list = List.new(list_params)
+    @list = List.new(page_params)
 
     if @list.save
       redirect_to list_path(@list)
@@ -29,7 +30,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
 
     if @list.update(list_params)
-      redirect_to list_path(@list)
+      redirect_to list_path(@page)
     else
       render :form
     end
@@ -42,6 +43,7 @@ class ListsController < ApplicationController
 
   private
     def list_params
-      params.require(:list).permit(:what, :when, :where)
-    end 
+      lists.require(:page).permit(:what, :where, :when)
+    end
+
 end
